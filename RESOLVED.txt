@@ -1,0 +1,8 @@
+kill.cs.rutgers.edu 182.48.3.2 A
+Message from ts_com
+Message from ts_com
+Message from ts_edu
+Message from ts_edu
+bit.ly 192.168.4.5 A
+happi.ly - Error:HOST NOT FOUND
+mx.rutgers.edu 192.64.4.2 A
