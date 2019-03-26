@@ -105,6 +105,8 @@ while True:
 	print("")
 
 serverSocket.close()
+tsComSocket.close()
+tsEduSocket.close()
 exit()
 
 
