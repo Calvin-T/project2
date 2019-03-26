@@ -69,7 +69,7 @@ tsComSocket.connect(tsComServer_binding)
 
 while True:
 	data_from_client = csockid.recv(200)
-	recv_msg = data_from_client.decode('utf-8')
+	recv_msg = data_from_client.decode('utf-8').lower()
 
 	print("[C]: "+ recv_msg)
 
@@ -78,7 +78,7 @@ while True:
 		tsComSocket.send(recv_msg.encode('utf-8'))
 		break
 	else:
-		if recv_msg.lower() in RS_DNS_Table:
+		if recv_msg in RS_DNS_Table:
 			send_msg = RS_DNS_Table[recv_msg.lower()]
 			print("[RS] to [C]: "+ send_msg)
 			csockid.send(send_msg.encode('utf-8'))

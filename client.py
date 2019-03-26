@@ -25,6 +25,7 @@ except socket.error as err:
 	exit()
 
 rsServer_addr=socket.gethostbyname(rsHostname)
+print(str(rsServer_addr))
 rsServer_binding=(rsServer_addr,rsListenPort)
 rsSocket.connect(rsServer_binding)
 
@@ -35,12 +36,14 @@ rsSocket.connect(rsServer_binding)
 with open("PROJ2-HNS.txt") as file:
 	lines = [line.rstrip('\r\n') for line in file]
 	for line in lines:
-		print("[C]: "+ line)
+
 		rsSocket.send(line.encode('utf-8'))
+		print("[C]: " + line)
 		data_from_RSserver = rsSocket.recv(200)
-		print("[S]: " + data_from_RSserver)
-		print("")
+		#print("[S]: " + data_from_RSserver)
+		#print("")
 		results.append(data_from_RSserver.decode('utf-8'))
+		print(data_from_RSserver.decode('utf-8'))
 
 
 	closing_msg = "done"
